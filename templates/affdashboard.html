@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Dashboard - Brand</title>
+    <link rel="stylesheet" href="../static/asset2/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="../static/asset2/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../static/asset2/css/untitled-1.css">
+    <link rel="stylesheet" href="../static/asset2/css/untitled.css">
+</head>
+
+<body id="page-top" style="color: rgb(0,0,0);background: rgb(0,0,0);">
+    <div id="wrapper">
+        <nav class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark" style="background: black;">
+            <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink" style="color: #fff;"></i></div>
+                    <div class="sidebar-brand-text mx-3"><span style="color: #fff;">Brand</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item"><a class="nav-link active" href="index.html" style="color: #fff;"><i class="fas fa-tachometer-alt" style="color:#fff;"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fas fa-user" style="color: #fff;"></i><span style="color: #fff;">Profile</span></a></li>
+                    <li class="nav-item"></li><button class="btn mx-auto" style="background-color: #FFC47E;"><a href="/logout" style="text-decoration: none; color: #000000;font-size: medium;">Logout</a></button></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                </ul>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button" style="color: rgb(0,0,0);background: rgb(0,0,0);"></button></div>
+            </div>
+        </nav>
+        {% for product in products %}
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content" style="background-color: black;">
+                <div class="container-fluid" style="background: #000000;">
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4"></div>
+                    <div class="row" style="margin-top: 52px;">
+                        <div class="col-md-6 col-xl-2 mb-4">
+                            <div class="card shadow border-start-primary py-2" style="background: #000000;border-style: none;">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-primary fw-bold text-xs mb-1" style="color: #FFC47E;padding-left: 0px;"><span style="color: #FFC47E;font-size: 20px;padding-right: 0px;margin-right: -2px;padding-left: 0px;margin-left: 0px;">Name</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span style="color: #fff;padding-left: 23px;">{{product}}</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-6 col-xl-1 mb-4">
+                            <div class="card shadow border-start-success py-2" style="background: rgb(0,0,0);border-color: rgb(0,0,0);">
+                                <div class="card-body" style="margin-bottom: -1px;padding-bottom: 12px;">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-success fw-bold text-xs mb-1"><span style="color: #FFC47E;font-size: 20px;">Views</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span style="color: #fff;">{{products[product][0][0]}}</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 col-xl-2 mb-4">
+                            <div class="card shadow border-start-warning py-2" style="background: rgb(0,0,0);border-color: rgb(0,0,0);">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span style="color: #FFC47E;font-size: 20px;">sales</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span style="color: #fff;">{{products[product][0][1]}}</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-2 mb-4">
+                            <div class="card shadow border-start-warning py-2" style="background: rgb(0,0,0);border-color: rgb(0,0,0);">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span style="color: #FFC47E;font-size: 20px;">earnings</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span style="color: #fff;">{{products[product][0][-1]}}</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+
+                    {% endfor %}    
+                        
+                        <footer class="sticky-footer" style="background-color: black;">
+                            <div class="container my-auto">
+                                <div class="text-center my-auto copyright" style="color: white;"><span>Copyright © Brand 2023</span></div>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/asset2/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/asset2/js/chart.min.js"></script>
+    <script src="../static/asset2/js/bs-init.js"></script>
+    <script src="../static/asset2/js/theme.js"></script>
+</body>
+
+</html>
